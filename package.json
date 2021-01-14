@@ -1,0 +1,17 @@
+{
+  "name": "demo-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@everfit-io/module-logger": "1.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "node-dependency-injection": "^2.6.8",
+    "pino": "^6.10.0"
+  }
+}
