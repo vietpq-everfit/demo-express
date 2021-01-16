@@ -91,3 +91,5 @@ test/single-file-test.js
 
 # Firebase
 firebase-dev.json
+
+.npmrc
