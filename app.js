@@ -8,8 +8,8 @@ var usersRouter = require('./routes/users');
 
 const logger = require('pino')()
 
-const {Logger} = require('@everfit-io/module-logger');
-const loggerService = new Logger(logger, {renameContext: 'everfit'});
+const {Logger, LogInput} = require('@everfit-io/module-logger');
+const loggerService = new Logger(logger, {renameContext: 'context'});
 
 var app = express();
 
@@ -22,7 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/log', (req, res) => {
-  loggerService.log('log', req);
+  const logInput = new LogInput('log message', 'test-context');
+  loggerService.log(logInput, {a: 1, b: 2});
   return res.json({});
 });
 app.get('/warn', (req, res) => {
